@@ -1,65 +1,35 @@
-import React from "react";
+import React, {useState} from "react";
 
 type RatingProps = {
-    value: 1 | 2 | 3 | 4 | 5
+    // value: 1 | 2 | 3 | 4 | 5
 }
 
 export function Rating(props: RatingProps) {
 
+    let [value, setValue] = useState(0)
 
     return <div>
-        <Star selected={props.value > 0}/>
-        <Star selected={props.value > 1}/>
-        <Star selected={props.value > 2}/>
-        <Star selected={props.value > 3}/>
-        <Star selected={props.value > 4}/>
+        <Star selected={value > 0} point={1} set={setValue}/>
+        <Star selected={value > 1} point={2} set={setValue}/>
+        <Star selected={value > 2} point={3} set={setValue}/>
+        <Star selected={value > 3} point={4} set={setValue}/>
+        <Star selected={value > 4} point={5} set={setValue}/>
 
     </div>
-
-
-    //     case 2:
-    //         return <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     case 3:
-    //         return <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     case 4:
-    //         return <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={false}/>
-    //         </div>
-    //     case 5:
-    //         return <div>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //             <Star selected={true}/>
-    //         </div>
-    // }
-    // return <hr/>
-
 
 }
 
 type StarProps = {
     selected: boolean
+    point: 0 | 1 | 2 | 3 | 4 | 5
+    set: (p: number) => void
 }
 
-let Star = (props: StarProps) => props.selected ? <span> <b>Star </b></span> : <span> Star </span>
+let Star = (props: StarProps) => props.selected ? <span onClick={() => {
+    props.set(props.point)
+}}> <b>Star </b></span> : <span onClick={() => {
+    props.set(props.point)
+}}> Star </span>
 
 
 
