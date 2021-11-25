@@ -1,0 +1,34 @@
+
+.flexBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+
+.flashlightOn {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: seagreen;
+}
+
+.flashlightOff {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: brown;
+}
+
+
+
+
+
+.on {
+    background-color:darkcyan;
+}
+
+.off {
+    background-color: brown;
+}

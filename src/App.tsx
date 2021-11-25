@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+// import React from 'react';
 import './App.css';
+import {Acordion} from "./components/Acordion/Acordion";
+import {Rating} from "./Rating";
+import {AppTitle} from "./components/AppTitle/AppTitle";
+import {OnOff} from "./components/OnPff/OnOff";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edittttt <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <div className="App">
+
+            {/*<AppTitle title={'My App'}/>*/}
+            {/*<AppTitle title={'Your App'}/>*/}
+            {/*Article 1*/}
+            {/*<Rating value={3}/>*/}
+
+            {/*<Acordion title={'Rating'} collapsed={true}/>*/}
+
+
+            {/*Article 1*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
+            <OnOff />
+
+        </div>
+    )
 }
+
 
 export default App;
