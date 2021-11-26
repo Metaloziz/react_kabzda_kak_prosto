@@ -1,36 +1,35 @@
 // import React from 'react';
 import './App.css';
-import {Acordion} from "./components/Acordion/Acordion";
-import {Rating} from "./Rating";
-import {AppTitle} from "./components/AppTitle/AppTitle";
+import {Accordion2} from './components/AcordionWithUseState/Acordion2';
+import {RatingWithUseState} from "./components/RatingWithUseState/RatingWithUseState";
+import {Rating, RatingValuePropsType} from "./components/Rating/Rating";
+import {useState} from "react";
 import {OnOff} from "./components/OnPff/OnOff";
-import { Acordion2 } from './components/AcordionWithUseState/Acordion2';
+import {OnOffWithUseState} from "./components/OnPffWithUseState/OnOffWithUseState";
 
 function App() {
 
 
+    let [ratingValue, setRatingValue] = useState<RatingValuePropsType>(1)
+    let [collapsed, setCollapsed] = useState(false)
+    let [on, setOnOff] = useState(false)
     return (
         <div className="App">
+            <OnOffWithUseState/>
+            <OnOff on={on} seOn={setOnOff}/>
+
+            <Rating value={ratingValue} oneClick={setRatingValue}/>
 
             {/*<AppTitle title={'My App'}/>*/}
             {/*<AppTitle title={'Your App'}/>*/}
             {/*Article 1*/}
-            {/*<Rating value={3}/>*/}
+            {/*<RatingWithUseState value={3}/>*/}
 
-            {/*<Acordion title={'Rating'} collapsed={true}/>*/}
 
-            <Acordion2 title={'Rating'}/>
-            <Acordion2 title={'Menu'}/>
+            <Accordion2 title={'Rating'} value={collapsed} oneClick={setCollapsed}/>
+
             Article 1
-            <Rating />
-            <Rating />
-            <Rating />
-            <Rating />
-
-
-            {/*<OnOff />*/}
-            {/*<OnOff />*/}
-            {/*<OnOff />*/}
+            <RatingWithUseState/>
 
 
         </div>
