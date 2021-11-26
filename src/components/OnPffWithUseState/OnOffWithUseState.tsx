@@ -1,16 +1,13 @@
 import React, {useState} from "react";
 
-
 type PropType = {
+    setOn: (props: boolean) => void
     // on: boolean
 }
 
-
 export function OnOffWithUseState(props: PropType) {
 
-    let [on, setOnOff]=useState(false)
-
-
+    let [on, setOnOff] = useState(false)
 
     const onStyle = {
         width: '30px',
@@ -36,12 +33,20 @@ export function OnOffWithUseState(props: PropType) {
         backgroundColor: on ? 'green' : 'red'
     }
 
+    let switchOn = () => {
+        setOnOff(true)
+        props.setOn(true)
+    }
+    let switchOff = () => {
+        setOnOff(false)
+        props.setOn(false)
+    }
+
     return (
         <div>
-            <div style={onStyle} onClick={()=>{setOnOff(true)}}>On</div>
-            <div style={offStyle} onClick={()=>{setOnOff(false)}}>Off</div>
-            <div style={indicatorStyle} ></div>
+            <div style={onStyle} onClick={switchOn}>On</div>
+            <div style={offStyle} onClick={switchOff}>Off</div>
+            <div style={indicatorStyle}>.</div>
         </div>
-
     )
 }

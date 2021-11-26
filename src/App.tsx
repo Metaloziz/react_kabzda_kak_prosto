@@ -15,8 +15,10 @@ function App() {
     let [on, setOnOff] = useState(false)
     return (
         <div className="App">
-            <OnOffWithUseState/>
-            <OnOff on={on} seOn={setOnOff}/>
+            <OnOffWithUseState setOn={setOnOff} />{on.toString()}
+
+
+            {/*<OnOff on={on} setOn={setOnOff}/>*/}
 
             <Rating value={ratingValue} oneClick={setRatingValue}/>
 
