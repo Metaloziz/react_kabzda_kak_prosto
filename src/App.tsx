@@ -4,7 +4,6 @@ import {Accordion2} from './components/AcordionWithUseState/Acordion2';
 import {RatingWithUseState} from "./components/RatingWithUseState/RatingWithUseState";
 import {Rating, RatingValuePropsType} from "./components/Rating/Rating";
 import {useState} from "react";
-import {OnOff} from "./components/OnPff/OnOff";
 import {OnOffWithUseState} from "./components/OnPffWithUseState/OnOffWithUseState";
 
 function App() {
@@ -15,7 +14,8 @@ function App() {
     let [on, setOnOff] = useState(false)
     return (
         <div className="App">
-            <OnOffWithUseState setOn={setOnOff} />{on.toString()}
+
+            <OnOffWithUseState setOn={setOnOff}/>{on.toString()}
 
 
             {/*<OnOff on={on} setOn={setOnOff}/>*/}
