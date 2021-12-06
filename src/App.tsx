@@ -8,7 +8,6 @@ import {OnOffWithUseState} from "./components/OnPffWithUseState/OnOffWithUseStat
 
 function App() {
 
-
     let [ratingValue, setRatingValue] = useState<RatingValuePropsType>(1)
     let [collapsed, setCollapsed] = useState(false)
     let [on, setOnOff] = useState(false)
@@ -16,7 +15,6 @@ function App() {
         <div className="App">
 
             <OnOffWithUseState setOn={setOnOff}/>{on.toString()}
-
 
             {/*<OnOff on={on} setOn={setOnOff}/>*/}
 
@@ -27,16 +25,13 @@ function App() {
             {/*Article 1*/}
             {/*<RatingWithUseState value={3}/>*/}
 
-
             <Accordion2 title={'Rating'} value={collapsed} oneClick={setCollapsed}/>
 
             Article 1
             <RatingWithUseState/>
-
-
         </div>
     )
 }
 
-
+//test for pull from Git
 export default App;
