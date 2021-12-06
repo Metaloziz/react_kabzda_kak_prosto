@@ -44,7 +44,6 @@ export function OnOffWithUseState(props: PropType) {
 
     return (
         <div>
-            ad;mfadmfa;ldmf;almdf
             <div style={onStyle} onClick={switchOn}>On</div>
             <div style={offStyle} onClick={switchOff}>Off</div>
             <div style={indicatorStyle}>.</div>

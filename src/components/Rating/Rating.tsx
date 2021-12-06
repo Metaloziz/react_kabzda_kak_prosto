@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export type RatingValuePropsType = 1 | 2 | 3 | 4 | 5
+export type RatingValuePropsType = 0 | 1 | 2 | 3 | 4 | 5
 
 
 type RatingProps = {
@@ -18,11 +18,21 @@ export function Rating(props: RatingProps) {
 
 
     return <div>
-        <Star selected={props.value > 0} oneClick={()=>{props.oneClick(1)}}/>
-        <Star selected={props.value > 1} oneClick={()=>{props.oneClick(2)}}/>
-        <Star selected={props.value > 2} oneClick={()=>{props.oneClick(3)}}/>
-        <Star selected={props.value > 3} oneClick={()=>{props.oneClick(4)}}/>
-        <Star selected={props.value > 4} oneClick={()=>{props.oneClick(5)}}/>
+        <Star selected={props.value > 0} oneClick={() => {
+            props.oneClick(1)
+        }}/>
+        <Star selected={props.value > 1} oneClick={() => {
+            props.oneClick(2)
+        }}/>
+        <Star selected={props.value > 2} oneClick={() => {
+            props.oneClick(3)
+        }}/>
+        <Star selected={props.value > 3} oneClick={() => {
+            props.oneClick(4)
+        }}/>
+        <Star selected={props.value > 4} oneClick={() => {
+            props.oneClick(5)
+        }}/>
 
     </div>
 
