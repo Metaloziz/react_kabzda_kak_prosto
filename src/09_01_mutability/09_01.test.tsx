@@ -117,3 +117,14 @@ test('referense type array test', () => {
 
     expect(users[1].name).toBe('Poul')
 })
+
+
+test('sort method', ()=>{
+
+    let array = ['a', 'z', 'b']
+
+    let array2 = array.sort()
+
+    expect(array2).toEqual(['a','b','z'])
+
+})

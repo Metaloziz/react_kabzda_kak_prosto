@@ -1,4 +1,4 @@
-import React, {MouseEvent} from "react";
+import React, {FormEventHandler, MouseEvent, useState} from "react";
 
 export {}
 
@@ -25,7 +25,6 @@ export let users = [
     }
 ]
 
-
 export let User = () => {
 
     let message = () => {
@@ -38,6 +37,10 @@ export let User = () => {
     }
 
 
+    let [data, setData] = useState<number>(1)
+
+
+    console.log('Render')
     return <div className={'Div'}>
         <script>
             let btn = document.getElementById('')
@@ -46,6 +49,6 @@ export let User = () => {
         <button onMouseMove={message}>add</button>
         <button onClick={funct}>cleared</button>
 
-
+        <button onClick={()=>setData(data+1)}>{data}</button>
     </div>
 }
