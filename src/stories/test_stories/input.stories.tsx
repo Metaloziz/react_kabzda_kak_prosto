@@ -1,14 +1,25 @@
 import {InputNew} from "./InputNew";
 import {OnOff} from "../../components/OnOff/OnOff";
 import {ChangeEvent, useRef, useState} from "react";
+import {action} from "@storybook/addon-actions";
 
 export default {
     title: "input",
     components: OnOff   // I can add different component
 }
 
-export const NewInput_call = () => <InputNew/>
 
+export const ControledInput =()=> {
+
+    const [parentValue, setParentValue] = useState('')
+
+    return <input value={parentValue} onChange={action('hoho')}/>
+}
+
+
+
+
+export const NewInput_call = () => <InputNew/>
 export const uncontroledInput_Fix_Value = () => <input type={"text"} placeholder={'not fix'}/>
 export const TrackUncontroledInput_Fix_Value = () => {
 
@@ -20,7 +31,6 @@ export const TrackUncontroledInput_Fix_Value = () => {
     }
     return <><input onChange={setNewText} value={'fix'}/>-{value}</>
 }
-
 export const TrackUncontroledInput_Fix_Value_By_Button = () => {
 
     const [value, setValue] = useState('')
@@ -34,8 +44,6 @@ export const TrackUncontroledInput_Fix_Value_By_Button = () => {
 
     return <><input ref={refLink}/><button onClick={save}>save</button>-actual text:{value}</>
 }
-
-
 export const ControledInput_Fix_Value = () => <input type={"text"} value={'fix value'}/>
 
 
