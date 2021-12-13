@@ -4,8 +4,7 @@ import {Accordion2} from './components/AcordionWithUseState/Acordion2';
 import {RatingWithUseState} from "./components/RatingWithUseState/RatingWithUseState";
 import {Rating, RatingValuePropsType} from "./components/Rating/Rating";
 import {useState} from "react";
-import {OnOff} from "./components/OnPff/OnOff";
-import {OnOffWithUseState} from "./components/OnPffWithUseState/OnOffWithUseState";
+import {OnOffWithUseState} from "./components/OnOffWithUseState/OnOffWithUseState";
 
 function App() {
 

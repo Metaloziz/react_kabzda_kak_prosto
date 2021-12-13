@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 
-type RatingProps = {
-    // value: 1 | 2 | 3 | 4 | 5
-}
+// type RatingProps = {
+//     // value: 1 | 2 | 3 | 4 | 5
+// }
 type StarProps = {
     selected: boolean
     point: 0 | 1 | 2 | 3 | 4 | 5
     set: (p: number) => void
 }
 
-export function RatingWithUseState(props: RatingProps) {
+export function RatingWithUseState() {
 
     let [value, setValue] = useState(0)
 
@@ -24,6 +24,11 @@ export function RatingWithUseState(props: RatingProps) {
 }
 
 
-let Star = (props: StarProps) => <span onClick={() => {
-    props.set(props.point)
-}}> {props.selected ? <b>Star </b> : 'Star '} </span>
+let Star = ({set, selected, point}: StarProps) => {
+
+    const change = () => {
+        set(point)
+    }
+
+    return <span onClick={change}> {selected ? <b>Star </b> : 'Star '} </span>
+}
