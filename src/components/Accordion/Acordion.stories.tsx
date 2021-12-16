@@ -2,7 +2,7 @@ import {Accordion} from "./Accordion";
 
 
 export default {
-    title: "Accordionnnnnnn",                // just name in StoryBook
+    title: "Accordion",                // just name in StoryBook
     components: Accordion
 }
 

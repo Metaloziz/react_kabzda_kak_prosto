@@ -1,35 +1,47 @@
 import React from "react";
 
-type AccordionProps = {
+type AccordionPT = {
     title: string
     value: boolean
     oneClick: (value: boolean) => void
-    // collapsed: boolean
+    data: AccordionItemsPT[]
+    callbackItem: (id: string) => void
 }
-type AccordionTitlePropsType = {
+type AccordionTitlePT = {
     title: string
     onClick: () => void
 }
+type AccordionBodyPT = {
+    data: AccordionItemsPT[]
+    callbackItem: (id: string) => void
+}
+type AccordionItemsPT = {
+    title: string
+    id: string
+}
 
+export const Accordion2 = ({value, title, oneClick, data, callbackItem}: AccordionPT) => {
 
-export function Accordion2(props: AccordionProps) {
+    const callBack = () => oneClick(!value)
+    return (
+        <>
+            <AccordionTitle title={title} onClick={callBack}/>
+            {value && <AccordionBody data={data} callbackItem={callbackItem}/>}
+        </>
+    )
+}
 
-    return <div>
-        <AccordionTitle title={props.title} onClick={() => {
-            props.oneClick(!props.value)
-        }}/>
-        {props.value && <AccordionBody/>}
-    </div>
+export const AccordionTitle = ({title, onClick}: AccordionTitlePT) => {
+
+    const callBack = () => onClick()
+    return <h3 onClick={callBack}>{title}</h3>
 }
 
 
-let AccordionTitle = (props: AccordionTitlePropsType) => <h3 onClick={() => {
-    props.onClick()
-}}>{props.title}</h3>
+export const AccordionBody = ({data, callbackItem}: AccordionBodyPT) => {
 
-let AccordionBody = () => <ul>
-    <li>1</li>
-    <li>2</li>
-    <li>3</li>
-</ul>
+    return <ul>
+        {data.map(l => <li key={l.id} onClick={() => callbackItem(l.id)}>{l.title}</li>)}
+    </ul>
+}
 
