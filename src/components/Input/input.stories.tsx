@@ -30,17 +30,11 @@ export default {
 export const ControlledInput = () => {
     const [value, setValue] = useState<string>('')
 
-    // const callBack = () => {
-    //     action("want to change")
-    //     setValue('a')
-    // }
+    const callBack = (e:ChangeEvent<HTMLInputElement>) => {
+        setValue(e.currentTarget.value)
+    }
 
-    return <input value={value} onChange={(e) => {
-        console.log(e)
-        debugger
-        setValue('')
-
-    }}/>
+    return <input value={value} onChange={callBack}/>
 }
 export const ControlledCheckBox = () => {
     const [value, setValue] = useState<boolean>(true)

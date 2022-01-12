@@ -1,15 +1,38 @@
-import React from "react";
-import {dataPT, statePT} from "./MySelect.stories";
+import React, {useMemo, useState} from "react";
+
 import s from './MySelect.module.css'
+import {dataPT, itemPT} from "../UseMemo/ReactMemo";
+import {RatingValuePropsType} from "../Rating/Rating";
 
 
 type MySelectPT = {
-    data: dataPT
-    state: statePT
+    data: itemPT[]
+
 }
 
-export const MySelect = ({data, state}: MySelectPT) => {
+export const MySelect = (props: MySelectPT & dataPT) => {
 
+    let [title, setTitle] = useState('1')
+    let [collapsed, setCollapsed] = useState(false)
+    let [hover, setHover] = useState<string>()
+
+    console.log('change')
+
+    // const useMemoFun = useMemo(() => {
+    //     return () => console.log(props.data)
+    // }, [props.data])
+    // useMemoFun()
+
+    console.log(props.data)
+
+    let state = {
+        title: title,
+        setTitle: setTitle,
+        collapsed: collapsed,
+        setCollapsed: setCollapsed,
+        hover: hover,
+        setHover: setHover
+    }
 
     const callback1 = () => {
         state.setCollapsed(!state.collapsed)
@@ -19,23 +42,22 @@ export const MySelect = ({data, state}: MySelectPT) => {
         state.setCollapsed(!state.collapsed)
     }
 
-
     return (
         <div className={s.body}>
             <div className={s.title} onClick={callback1}>{state.title}</div>
             <div className={s.items}>
-                {state.collapsed && data.map(l => <div
+                {state.collapsed && props.data.map(l => <div
 
                     onMouseEnter={() => {
                         // state.setTitle(l.title)
                     }}
-                    className={l.title === state.hover ? s.selected : ''} key={l.id}
+                    className={title === state.hover ? s.selected : ''} key={l.id}
                     onClick={() => {
                         callback2(l.title)
                     }}><span>{l.title}</span></div>)}
-
             </div>
-
         </div>
     );
 };
+
+// export const MySelect1 = React.memo(MySelect_init)
