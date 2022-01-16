@@ -1,8 +1,7 @@
 // import React from 'react';
 import './App.css';
-import {ReactMemo} from "./components/UseMemo/ReactMemo";
-import {UseMemoTest} from "./components/UseMemoTest/UseMemoTest";
-import {ReactMemoContainer} from "./components/ReactMemoContainer/ReactMemoContainer";
+import {Clock} from "./components/Clock/Clock";
+import {BrowserRouter} from "react-router-dom";
 
 
 function App() {
@@ -20,9 +19,12 @@ function App() {
             {/*<Accordion2 title={'Rating'} value={collapsed} oneClick={setCollapsed}/>*/}
             {/*Article 1*/}
             {/*<RatingWithUseState/>*/}
-            <ReactMemoContainer/>
+            {/*<ReactMemoContainer/>*/}
             {/*<ReactMemo/>*/}
             {/*<UseMemoTest/>*/}
+            {/*<UseStateCool/>*/}
+            {/*<UseEffectComponent/>*/}
+            <Clock/>
         </div>
     )
 }
