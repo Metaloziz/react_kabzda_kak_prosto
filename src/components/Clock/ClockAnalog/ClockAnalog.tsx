@@ -38,9 +38,10 @@ export const ClockAnalog = () => {
 
         }, 1000)
 
-        return clearInterval(intervalID)
+        return () => {
+            clearInterval(intervalID)
+        }
 
-        // return clearInterval(intervalID)
     }, [setTimeCB])
 
 
