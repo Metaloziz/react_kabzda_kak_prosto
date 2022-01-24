@@ -1,6 +1,7 @@
 // import React from 'react';
 import './App.css';
 import {Clock} from "./components/Clock/Clock";
+import {ClockFromDimych} from "./components/ClockFromDimych/ClockFromDimych";
 
 
 function App() {
@@ -23,7 +24,9 @@ function App() {
             {/*<UseMemoTest/>*/}
             {/*<UseStateCool/>*/}
             {/*<UseEffectComponent/>*/}
-            <Clock/>
+            {/*<Clock/>*/}
+            <ClockFromDimych mode={"digital"}/>
+            <ClockFromDimych mode={"analog"}/>
         </div>
     )
 }

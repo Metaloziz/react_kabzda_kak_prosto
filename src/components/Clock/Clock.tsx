@@ -4,9 +4,6 @@ import {ClockAnalog} from "./ClockAnalog/ClockAnalog";
 
 export const Clock = () => {
 
-    //test18.01.22
-
-
     const [time, setTime] = useState<string>("time")
     const [type, setType] = useState<boolean>(false)
 

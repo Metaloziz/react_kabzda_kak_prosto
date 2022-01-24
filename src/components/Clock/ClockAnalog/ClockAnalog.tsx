@@ -20,10 +20,10 @@ export const ClockAnalog = () => {
 
     const deg = 6;
 
-    let day = new Date();
-    time.hours = day.getHours() * 30;
-    time.minutes = day.getMinutes() * deg;
-    time.seconds = day.getSeconds() * deg;
+    let data = new Date();
+    time.hours = data.getHours() * 30;
+    time.minutes = data.getMinutes() * deg;
+    time.seconds = data.getSeconds() * deg;
 
     const setTimeCB = useCallback(() => {
         return {...time}
