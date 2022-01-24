@@ -1,5 +1,6 @@
 import {ChildrenClockPT} from "../ClockFromDimych";
-import './AnalogClock.css'
+import s from './AnalogClock.module.css'
+
 
 export const AnalogClock = ({data}: ChildrenClockPT) => {
 
@@ -18,12 +19,12 @@ export const AnalogClock = ({data}: ChildrenClockPT) => {
 
 
     return (
-        <div className={"clock"}>
+        <div className={s.clock}>
             <h3>Clock</h3>
-            <div className={"analog-clock"}>
-                <div className={"dial seconds"} style={secondsStyle}/>
-                <div className={"dial minutes"} style={minutesStyle}/>
-                <div className={"dial hours"} style={hoursStyle}/>
+            <div className={s.analogClock}>
+                <div className={s.seconds} style={secondsStyle}/>
+                <div className={s.minutes} style={minutesStyle}/>
+                <div className={s.hours} style={hoursStyle}/>
             </div>
         </div>
     );
