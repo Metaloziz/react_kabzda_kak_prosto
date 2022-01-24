@@ -12,11 +12,7 @@ export const Clock = () => {
     }
 
     useEffect(() => {
-
-        console.log('useEffect')
-
         let interval = setInterval(() => {
-            console.log('setInterval_digital')
             setTime(changeTime)
         }, 1000)
 

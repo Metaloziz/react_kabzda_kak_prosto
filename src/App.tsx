@@ -1,7 +1,6 @@
 // import React from 'react';
 import './App.css';
-import {Clock} from "./components/Clock/Clock";
-import {ClockFromDimych} from "./components/ClockFromDimych/ClockFromDimych";
+import {TypedText} from "./components/TypedText/TypedText";
 
 
 function App() {
@@ -25,11 +24,13 @@ function App() {
             {/*<UseStateCool/>*/}
             {/*<UseEffectComponent/>*/}
             {/*<Clock/>*/}
-            <ClockFromDimych mode={"digital"}/>
-            <ClockFromDimych mode={"analog"}/>
+            {/*<ClockFromDimych mode={"digital"}/>*/}
+            {/*<ClockFromDimych mode={"analog"}/>*/}
+            <TypedText/>
         </div>
     )
 }
 
-
 export default App;
+
+

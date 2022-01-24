@@ -31,15 +31,12 @@ export const ClockAnalog = () => {
 
     useEffect(() => {
         let intervalID = setInterval(() => {
-
-            console.log('setInterval_analog')
-
             setTime(setTimeCB)
-
         }, 1000)
 
         return () => {
             clearInterval(intervalID)
+            console.log('END')
         }
 
     }, [setTimeCB])
