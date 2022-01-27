@@ -32,7 +32,7 @@ export let User = () => {
     }
 
     const funct = (event: MouseEvent<HTMLButtonElement>) => {
-        debugger
+        // debugger
         console.log(event.nativeEvent)
     }
 
@@ -49,6 +49,6 @@ export let User = () => {
         <button onMouseMove={message}>add</button>
         <button onClick={funct}>cleared</button>
 
-        <button onClick={()=>setData(data+1)}>{data}</button>
+        <button onClick={() => setData(data + 1)}>{data}</button>
     </div>
 }
